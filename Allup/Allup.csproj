@@ -5,6 +5,65 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20221120102106_CreatedCategory.cs" />
+    <Compile Remove="Migrations\20221120102106_CreatedCategory.Designer.cs" />
+    <Compile Remove="Migrations\20221122054810_CreatedTagTable.cs" />
+    <Compile Remove="Migrations\20221122054810_CreatedTagTable.Designer.cs" />
+    <Compile Remove="Migrations\20221122055042_CreatedBrandTable.cs" />
+    <Compile Remove="Migrations\20221122055042_CreatedBrandTable.Designer.cs" />
+    <Compile Remove="Migrations\20221122062013_CreatedProductTable.cs" />
+    <Compile Remove="Migrations\20221122062013_CreatedProductTable.Designer.cs" />
+    <Compile Remove="Migrations\20221122062404_CreatedProductImagesTableRelatedToProductTable.cs" />
+    <Compile Remove="Migrations\20221122062404_CreatedProductImagesTableRelatedToProductTable.Designer.cs" />
+    <Compile Remove="Migrations\20221122063147_CreatedProductImagesTableRelatedToProductTable.cs" />
+    <Compile Remove="Migrations\20221122063147_CreatedProductImagesTableRelatedToProductTable.Designer.cs" />
+    <Compile Remove="Migrations\20221122063422_CreatedProductImageAndProductTablesRelatedToEachOther.cs" />
+    <Compile Remove="Migrations\20221122063422_CreatedProductImageAndProductTablesRelatedToEachOther.Designer.cs" />
+    <Compile Remove="Migrations\20221122064011_UpdateProductTableRealtedToBrand.cs" />
+    <Compile Remove="Migrations\20221122064011_UpdateProductTableRealtedToBrand.Designer.cs" />
+    <Compile Remove="Migrations\20221122064429_CreatedProductTagTableManyToMany.cs" />
+    <Compile Remove="Migrations\20221122064429_CreatedProductTagTableManyToMany.Designer.cs" />
+    <Compile Remove="Migrations\20221122064749_UpdatedProductTableAddedRealtionToCategory.cs" />
+    <Compile Remove="Migrations\20221122064749_UpdatedProductTableAddedRealtionToCategory.Designer.cs" />
+    <Compile Remove="Migrations\20221122070213_UpdateProductTableMainImageAndHoverImAGEtABKES.cs" />
+    <Compile Remove="Migrations\20221122070213_UpdateProductTableMainImageAndHoverImAGEtABKES.Designer.cs" />
+    <Compile Remove="Migrations\20221122073140_CreatedCategoryTable.cs" />
+    <Compile Remove="Migrations\20221122073140_CreatedCategoryTable.Designer.cs" />
+    <Compile Remove="Migrations\20221122073341_CreatedTagsBrandsProducTsProductImagesAndProductTagsTablesAddedRelationsBetweenTagAndProductsManytoManyBrandAndProductAndProductImageAndProduct.cs" />
+    <Compile Remove="Migrations\20221122073341_CreatedTagsBrandsProducTsProductImagesAndProductTagsTablesAddedRelationsBetweenTagAndProductsManytoManyBrandAndProductAndProductImageAndProduct.Designer.cs" />
+    <Compile Remove="Migrations\20221122073513_createdTagsTable.cs" />
+    <Compile Remove="Migrations\20221122073513_createdTagsTable.Designer.cs" />
+    <Compile Remove="Migrations\20221122073725_CreatedTagTable.cs" />
+    <Compile Remove="Migrations\20221122073725_CreatedTagTable.Designer.cs" />
+    <Compile Remove="Migrations\20221122073813_CreatedTagasTable.cs" />
+    <Compile Remove="Migrations\20221122073813_CreatedTagasTable.Designer.cs" />
+    <Compile Remove="Migrations\20221122074254_20221122073341_CreatedTagsBrandsProducTsProductImagesAndProductTagsTablesAddedRelationsBetweenTagAndProductsManytoManyBrandAndProductAndProductImageAndProduct.cs" />
+    <Compile Remove="Migrations\20221122074254_20221122073341_CreatedTagsBrandsProducTsProductImagesAndProductTagsTablesAddedRelationsBetweenTagAndProductsManytoManyBrandAndProductAndProductImageAndProduct.Designer.cs" />
+    <Compile Remove="Migrations\20221122074408_CreatedTagsBrandsProducTsProductImagesAndProductTagsTablesAddedRelationsBetweenTagAndProductsManytoManyBrandAndProductAndProductImageAndProduct.cs" />
+    <Compile Remove="Migrations\20221122074408_CreatedTagsBrandsProducTsProductImagesAndProductTagsTablesAddedRelationsBetweenTagAndProductsManytoManyBrandAndProductAndProductImageAndProduct.Designer.cs" />
+    <Compile Remove="Migrations\20221122074625_CreatedTagTable.cs" />
+    <Compile Remove="Migrations\20221122074625_CreatedTagTable.Designer.cs" />
+    <Compile Remove="Migrations\20221122074703_CreatedCategoryTable.cs" />
+    <Compile Remove="Migrations\20221122074703_CreatedCategoryTable.Designer.cs" />
+    <Compile Remove="Migrations\20221122074939_CreatedCategoryTable.cs" />
+    <Compile Remove="Migrations\20221122074939_CreatedCategoryTable.Designer.cs" />
+    <Compile Remove="Migrations\20221122075107_CreatedBrandTable.cs" />
+    <Compile Remove="Migrations\20221122075107_CreatedBrandTable.Designer.cs" />
+    <Compile Remove="Migrations\20221122075413_AddedRelationToProductAndCateggoryTables.cs" />
+    <Compile Remove="Migrations\20221122075413_AddedRelationToProductAndCateggoryTables.Designer.cs" />
+    <Compile Remove="Migrations\20221122075638_CreatedProductImagesAndAddedRelationBetweenProductAndProductImages.cs" />
+    <Compile Remove="Migrations\20221122075638_CreatedProductImagesAndAddedRelationBetweenProductAndProductImages.Designer.cs" />
+    <Compile Remove="Migrations\20221122075747_CreatedProductTagsTableForManyToManyRelation.cs" />
+    <Compile Remove="Migrations\20221122075747_CreatedProductTagsTableForManyToManyRelation.Designer.cs" />
+    <Compile Remove="Migrations\20221122075946_20221122075638_CreatedProductImagesAndAddedRelationBetweenProductAndProductImages.cs" />
+    <Compile Remove="Migrations\20221122075946_20221122075638_CreatedProductImagesAndAddedRelationBetweenProductAndProductImages.Designer.cs" />
+    <Compile Remove="Migrations\20221122080138_CreatedProductImagesTableAndADDEDRelationToProduct.cs" />
+    <Compile Remove="Migrations\20221122080138_CreatedProductImagesTableAndADDEDRelationToProduct.Designer.cs" />
+    <Compile Remove="Migrations\20221122080226_CreatedProductImagesTableAndADDEDRelationToProduct.cs" />
+    <Compile Remove="Migrations\20221122080226_CreatedProductImagesTableAndADDEDRelationToProduct.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.31" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.31" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.31">

@@ -22,6 +22,12 @@ namespace Allup.Services
         {
             return await _context.Settings.ToDictionaryAsync(s=>s.Key,s=>s.Value);
         }
+   
 
+        public async Task<IEnumerable<Category>> GetCategoriesAsync()
+        {
+            return await _context.Categories.Include(c => c.Children).Where(c => c.IsDeleted == false & c.IsMain).ToListAsync();
+
+        }
     }
 }

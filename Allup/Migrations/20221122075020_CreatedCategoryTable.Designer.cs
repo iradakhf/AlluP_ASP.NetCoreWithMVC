@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Allup.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221120102106_CreatedCategory")]
-    partial class CreatedCategory
+    [Migration("20221122075020_CreatedCategoryTable")]
+    partial class CreatedCategoryTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -10,5 +10,7 @@ namespace Allup.Interfaces
     {
 
      Task<Dictionary<string,string>> GetSettingsAsync();
+        Task<IEnumerable<Category>> GetCategoriesAsync();
+
     }
 }

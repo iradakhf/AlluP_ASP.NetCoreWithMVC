@@ -18,5 +18,7 @@ namespace Allup.Models
         public Category Parent { get; set; }
         public IEnumerable<Category> Children { get; set; }
 
+        public IEnumerable<Product> Products { get; set; }
+
     }
 }

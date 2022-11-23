@@ -22,7 +22,11 @@ namespace Allup.Controllers
             HomeVM homeVM = new HomeVM
             {
                Sliders= await _context.Sliders.Where(s => s.IsDeleted == false).ToListAsync(),
-                Categories = await _context.Categories.Where(c => c.IsDeleted == false && c.IsMain == true ).ToListAsync()
+                Categories = await _context.Categories.Where(c => c.IsDeleted == false && c.IsMain == true ).ToListAsync(),
+                NewArrivals = await _context.Products.Where(c=>c.IsDeleted==false && c.IsNewArrival).ToListAsync(),
+                BestSellers = await _context.Products.Where(c => c.IsDeleted == false && c.IsBestSeller).ToListAsync(),
+                Featured = await _context.Products.Where(c => c.IsDeleted == false && c.IsFeatured).ToListAsync()
+
 
 
             };

@@ -2,7 +2,8 @@
 
 @{
     Dictionary<string, string> settings = await layoutService.GetSettingsAsync();
-  }
+    IEnumerable<Category> categories = await layoutService.GetCategoriesAsync();
+}
 
 <!doctype html>
 <html class="no-js" lang="en">
@@ -67,7 +68,7 @@
                 <div class="container-fluid custom-container">
                     <div class="header-nav-wrapper d-flex justify-content-between">
                         <div class="header-static-nav">
-                          @Html.Raw(settings.FirstOrDefault(s=>s.Key=="Slogan").Value)
+                            @Html.Raw(settings.FirstOrDefault(s => s.Key == "Slogan").Value)
                         </div>
                         <div class="header-menu-nav">
                             <ul class="menu-nav">
@@ -116,7 +117,7 @@
                         <div class="col-lg-3">
                             <div class="header-logo-contact d-flex  ">
                                 <div class="desktop-logo">
-                                    <a href="index.html">
+                                    <a asp-controller="home">
                                         <img src="~/assets/images/logo.png" alt="Logo">
                                     </a>
                                 </div> <!-- desktop logo -->
@@ -128,120 +129,41 @@
                                     <i class="icon ion-ios-telephone-outline"></i>
                                     <div class="phone media-body">
                                         <p>24/7 Support</p>
-                                        <a href="tel:@settings.First(s=>s.Key=="SupportPhone").Value">@settings.First(s=>s.Key=="SupportPhone").Value</a>
+                                        <a href="tel:@settings.First(s=>s.Key=="SupportPhone").Value">@settings.First(s => s.Key == "SupportPhone").Value</a>
                                     </div>
                                 </div>
                                 <div class="header-search media-body">
                                     <form action="#">
                                         <div class="search-category">
-                                            <select>
+                                            <select class="searchCategory">
                                                 <option value="0">All categories</option>
-                                                <option value="12">Laptop</option>
-                                                <option value="13">- - Hot Categories</option>
-                                                <option value="19">- - - - Dresses</option>
-                                                <option value="20">- - - - Jackets &amp; Coats</option>
-                                                <option value="21">- - - - Sweaters</option>
-                                                <option value="22">- - - - Jeans</option>
-                                                <option value="23">- - - - Blouses &amp; Shirts</option>
-                                                <option value="14">- - Outerwear &amp; Jackets</option>
-                                                <option value="24">- - - - Basic Jackets</option>
-                                                <option value="25">- - - - Real Fur</option>
-                                                <option value="26">- - - - Down Coats</option>
-                                                <option value="27">- - - - Blazers</option>
-                                                <option value="28">- - - - Trench Coats</option>
-                                                <option value="15">- - Weddings &amp; Events</option>
-                                                <option value="29">- - - - Wedding Dresses</option>
-                                                <option value="30">- - - - Evening Dresses</option>
-                                                <option value="31">- - - - Prom Dresses</option>
-                                                <option value="32">- - - - Bridesmaid Dresses</option>
-                                                <option value="33">- - - - Wedding Accessories</option>
-                                                <option value="16">- - Bottoms</option>
-                                                <option value="34">- - - - Skirts</option>
-                                                <option value="35">- - - - Leggings</option>
-                                                <option value="36">- - - - Pants &amp; Capris</option>
-                                                <option value="37">- - - - Wide Leg Pants</option>
-                                                <option value="38">- - - - Shorts</option>
-                                                <option value="17">- - Tops &amp; Sets</option>
-                                                <option value="39">- - - - Tank Tops</option>
-                                                <option value="40">- - - - Suits &amp; Sets</option>
-                                                <option value="41">- - - - Jumpsuits</option>
-                                                <option value="42">- - - - Rompers</option>
-                                                <option value="43">- - - - Sleep &amp; Lounge</option>
-                                                <option value="18">- - Accessories</option>
-                                                <option value="44">- - - - Eyewear &amp; Accessories</option>
-                                                <option value="45">- - - - Hats &amp; Caps</option>
-                                                <option value="46">- - - - Belts &amp; Cummerbunds</option>
-                                                <option value="47">- - - - Scarves &amp; Wraps</option>
-                                                <option value="48">- - - - Gloves &amp; Mittens</option>
-                                                <option value="49">Computer</option>
-                                                <option value="50">- - Bottoms</option>
-                                                <option value="53">- - - - Skirts</option>
-                                                <option value="54">- - - - Leggings</option>
-                                                <option value="55">- - - - Jeans</option>
-                                                <option value="56">- - - - Pants &amp; Capris</option>
-                                                <option value="57">- - - - Shorts</option>
-                                                <option value="51">- - Outerwear &amp; Jackets</option>
-                                                <option value="58">- - - - Trench</option>
-                                                <option value="59">- - - - Genuine Leather</option>
-                                                <option value="60">- - - - Parkas</option>
-                                                <option value="61">- - - - Down Jackets</option>
-                                                <option value="62">- - - - Wool &amp; Blends</option>
-                                                <option value="52">- - Underwear &amp; Loungewear</option>
-                                                <option value="63">- - - - Boxers</option>
-                                                <option value="64">- - - - Briefs</option>
-                                                <option value="65">- - - - Long Johns</option>
-                                                <option value="66">- - - - Men's Sleep &amp; Lounge</option>
-                                                <option value="67">- - - - Pajama Sets</option>
-                                                <option value="68">Smartphone</option>
-                                                <option value="69">- - Accessories &amp; Parts</option>
-                                                <option value="75">- - - - Cables &amp; Adapters</option>
-                                                <option value="76">- - - - Batteries</option>
-                                                <option value="77">- - - - Chargers</option>
-                                                <option value="78">- - - - Bags &amp; Cases</option>
-                                                <option value="79">- - - - Electronic Cigarettes</option>
-                                                <option value="70">- - Audio &amp; Video</option>
-                                                <option value="80">- - - - Televisions</option>
-                                                <option value="81">- - - - TV Receivers</option>
-                                                <option value="82">- - - - Projectors</option>
-                                                <option value="83">- - - - Audio Amplifier Boards</option>
-                                                <option value="84">- - - - TV Sticks</option>
-                                                <option value="71">- - Camera &amp; Photo</option>
-                                                <option value="85">- - - - Digital Cameras</option>
-                                                <option value="86">- - - - Camcorders</option>
-                                                <option value="87">- - - - Camera Drones</option>
-                                                <option value="88">- - - - Action Cameras</option>
-                                                <option value="89">- - - - Photo Studio Supplies</option>
-                                                <option value="72">- - Portable Audio &amp; Video</option>
-                                                <option value="90">- - - - Headphones</option>
-                                                <option value="91">- - - - Speakers</option>
-                                                <option value="92">- - - - MP3 Players</option>
-                                                <option value="93">- - - - VR/AR Devices</option>
-                                                <option value="94">- - - - Microphones</option>
-                                                <option value="73">- - Smart Electronics</option>
-                                                <option value="95">- - - - Wearable Devices</option>
-                                                <option value="96">- - - - Smart Home Appliances</option>
-                                                <option value="97">- - - - Smart Remote Controls</option>
-                                                <option value="98">- - - - Smart Watches</option>
-                                                <option value="99">- - - - Smart Wristbands</option>
-                                                <option value="74">- - Video Games</option>
-                                                <option value="100">- - - - Handheld Game Players</option>
-                                                <option value="101">- - - - Game Controllers</option>
-                                                <option value="102">- - - - Joysticks</option>
-                                                <option value="103">- - - - Stickers</option>
-                                                <option value="104">Game Consoles</option>
-                                                <option value="105">Mp3 &amp; headphone</option>
-                                                <option value="106">Tv &amp; Video</option>
-                                                <option value="107">Watches</option>
-                                                <option value="108">Washing Machine</option>
-                                                <option value="109">Camera</option>
-                                                <option value="110">Audio &amp; Theater</option>
-                                                <option value="111">Accessories</option>
-                                                <option value="112">Games &amp; Consoles</option>
+
+                                                @foreach (Category mainCategory in categories)
+                                                {
+                                                    <option value="@mainCategory.Id">@mainCategory.Name</option>
+                                                    if (mainCategory.Children != null && mainCategory.Children.Count() > 0)
+                                                    {
+                                                        foreach (Category child in mainCategory.Children)
+                                                        {
+                                                            <option value="@child.Id">-@child.Name</option>
+
+                                                        }
+
+                                                    }
+                                                }
+
                                             </select>
                                         </div>
-                                        <input type="text" placeholder="Enter your search key ... ">
-                                        <button><i class="icon ion-android-search"></i></button>
+                                        <input class="searchInput" type="text" placeholder="Enter your search key ... ">
+                                        <button type="button" class="searchBtn"><i class="icon ion-android-search"></i></button>
                                     </form>
+                                    <ul style="background-color:white; text-decoration:none; width:100%; height:auto; position:absolute; z-index:2">
+                                        <li>
+                                            <img width="100" src="~/assets/images/category-1.jpg" alt="Alternate Text" />
+                                            <a href="#">content</a>
+                                        </li>
+
+                                    </ul>
                                 </div>
                                 <div class="header-cart">
                                     <div class="cart-btn">
@@ -406,13 +328,8 @@
                             <div class="header-horizontal-menu">
                                 <ul class="menu-content">
                                     <li class="active">
-                                        <a href="#">Home <i class="fal fa-chevron-down"></i></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="index.html">Home 01</a></li>
-                                            <li><a href="index-2.html">Home 02</a></li>
-                                            <li><a href="index-3.html">Home 03</a></li>
-                                            <li><a href="index-4.html">Home 04</a></li>
-                                        </ul>
+                                        <a asp-controller="home">Home</a>
+
                                     </li>
                                     <li><a href="about.html">About</a></li>
                                     <li>
@@ -639,114 +556,33 @@
                 <div class="header-search">
                     <form action="#">
                         <div class="search-category">
-                            <select>
-                                <option value="0">All categories</option>
-                                <option value="12">Laptop</option>
-                                <option value="13">- - Hot Categories</option>
-                                <option value="19">- - - - Dresses</option>
-                                <option value="20">- - - - Jackets &amp; Coats</option>
-                                <option value="21">- - - - Sweaters</option>
-                                <option value="22">- - - - Jeans</option>
-                                <option value="23">- - - - Blouses &amp; Shirts</option>
-                                <option value="14">- - Outerwear &amp; Jackets</option>
-                                <option value="24">- - - - Basic Jackets</option>
-                                <option value="25">- - - - Real Fur</option>
-                                <option value="26">- - - - Down Coats</option>
-                                <option value="27">- - - - Blazers</option>
-                                <option value="28">- - - - Trench Coats</option>
-                                <option value="15">- - Weddings &amp; Events</option>
-                                <option value="29">- - - - Wedding Dresses</option>
-                                <option value="30">- - - - Evening Dresses</option>
-                                <option value="31">- - - - Prom Dresses</option>
-                                <option value="32">- - - - Bridesmaid Dresses</option>
-                                <option value="33">- - - - Wedding Accessories</option>
-                                <option value="16">- - Bottoms</option>
-                                <option value="34">- - - - Skirts</option>
-                                <option value="35">- - - - Leggings</option>
-                                <option value="36">- - - - Pants &amp; Capris</option>
-                                <option value="37">- - - - Wide Leg Pants</option>
-                                <option value="38">- - - - Shorts</option>
-                                <option value="17">- - Tops &amp; Sets</option>
-                                <option value="39">- - - - Tank Tops</option>
-                                <option value="40">- - - - Suits &amp; Sets</option>
-                                <option value="41">- - - - Jumpsuits</option>
-                                <option value="42">- - - - Rompers</option>
-                                <option value="43">- - - - Sleep &amp; Lounge</option>
-                                <option value="18">- - Accessories</option>
-                                <option value="44">- - - - Eyewear &amp; Accessories</option>
-                                <option value="45">- - - - Hats &amp; Caps</option>
-                                <option value="46">- - - - Belts &amp; Cummerbunds</option>
-                                <option value="47">- - - - Scarves &amp; Wraps</option>
-                                <option value="48">- - - - Gloves &amp; Mittens</option>
-                                <option value="49">Computer</option>
-                                <option value="50">- - Bottoms</option>
-                                <option value="53">- - - - Skirts</option>
-                                <option value="54">- - - - Leggings</option>
-                                <option value="55">- - - - Jeans</option>
-                                <option value="56">- - - - Pants &amp; Capris</option>
-                                <option value="57">- - - - Shorts</option>
-                                <option value="51">- - Outerwear &amp; Jackets</option>
-                                <option value="58">- - - - Trench</option>
-                                <option value="59">- - - - Genuine Leather</option>
-                                <option value="60">- - - - Parkas</option>
-                                <option value="61">- - - - Down Jackets</option>
-                                <option value="62">- - - - Wool &amp; Blends</option>
-                                <option value="52">- - Underwear &amp; Loungewear</option>
-                                <option value="63">- - - - Boxers</option>
-                                <option value="64">- - - - Briefs</option>
-                                <option value="65">- - - - Long Johns</option>
-                                <option value="66">- - - - Men's Sleep &amp; Lounge</option>
-                                <option value="67">- - - - Pajama Sets</option>
-                                <option value="68">Smartphone</option>
-                                <option value="69">- - Accessories &amp; Parts</option>
-                                <option value="75">- - - - Cables &amp; Adapters</option>
-                                <option value="76">- - - - Batteries</option>
-                                <option value="77">- - - - Chargers</option>
-                                <option value="78">- - - - Bags &amp; Cases</option>
-                                <option value="79">- - - - Electronic Cigarettes</option>
-                                <option value="70">- - Audio &amp; Video</option>
-                                <option value="80">- - - - Televisions</option>
-                                <option value="81">- - - - TV Receivers</option>
-                                <option value="82">- - - - Projectors</option>
-                                <option value="83">- - - - Audio Amplifier Boards</option>
-                                <option value="84">- - - - TV Sticks</option>
-                                <option value="71">- - Camera &amp; Photo</option>
-                                <option value="85">- - - - Digital Cameras</option>
-                                <option value="86">- - - - Camcorders</option>
-                                <option value="87">- - - - Camera Drones</option>
-                                <option value="88">- - - - Action Cameras</option>
-                                <option value="89">- - - - Photo Studio Supplies</option>
-                                <option value="72">- - Portable Audio &amp; Video</option>
-                                <option value="90">- - - - Headphones</option>
-                                <option value="91">- - - - Speakers</option>
-                                <option value="92">- - - - MP3 Players</option>
-                                <option value="93">- - - - VR/AR Devices</option>
-                                <option value="94">- - - - Microphones</option>
-                                <option value="73">- - Smart Electronics</option>
-                                <option value="95">- - - - Wearable Devices</option>
-                                <option value="96">- - - - Smart Home Appliances</option>
-                                <option value="97">- - - - Smart Remote Controls</option>
-                                <option value="98">- - - - Smart Watches</option>
-                                <option value="99">- - - - Smart Wristbands</option>
-                                <option value="74">- - Video Games</option>
-                                <option value="100">- - - - Handheld Game Players</option>
-                                <option value="101">- - - - Game Controllers</option>
-                                <option value="102">- - - - Joysticks</option>
-                                <option value="103">- - - - Stickers</option>
-                                <option value="104">Game Consoles</option>
-                                <option value="105">Mp3 &amp; headphone</option>
-                                <option value="106">Tv &amp; Video</option>
-                                <option value="107">Watches</option>
-                                <option value="108">Washing Machine</option>
-                                <option value="109">Camera</option>
-                                <option value="110">Audio &amp; Theater</option>
-                                <option value="111">Accessories</option>
-                                <option value="112">Games &amp; Consoles</option>
+                            <select class="searchCategory">
+                                <option value="">All categories</option>
+                                @foreach (Category mainCategory in categories)
+                                {
+                                    <option value="@mainCategory.Id">@mainCategory.Name</option>
+                                    if (mainCategory.Children != null && mainCategory.Children.Count() > 0)
+                                    {
+                                        foreach (var item in mainCategory.Children)
+                                        {
+                                            <option value="---@item.Id">@item.Name</option>
+
+                                        }
+                                    }
+
+                                }
+
                             </select>
                         </div>
-                        <input type="text" placeholder="Enter your search key ... ">
-                        <button><i class="icon ion-android-search"></i></button>
+                        <input class="searchInput" type="text" placeholder="Enter your search key ... ">
+                        <button type="button" class="searchBtn"><i class="icon ion-android-search"></i></button>
                     </form>
+                    <ul style="width:100%; height:auto; background-color:white; position:absolute; z-index:3; ">
+                        <li>
+                            <img src="~/assets/images/category-10.jpg" alt="Alternate Text" />
+                            <a href="#">content</a>
+                        </li>
+                    </ul>
                 </div>
             </div> <!-- container -->
 
@@ -1262,9 +1098,9 @@
                             <h4 class="footer-title">Contact Details</h4>
 
                             <ul>
-                                <li><i class="fas fa-map-marker-alt"></i>@settings.First(s=>s.Key=="Address").Value</li>
-                                <li><i class="fas fa-phone"></i> <a href="tell:@settings.First(s=>s.Key=="Phone").Value">@settings.First(s=>s.Key=="Phone").Value</a></li>
-                                <li><i class="fas fa-envelope"></i><a href="mailto://@settings.First(s=>s.Key=="Email").Value">@settings.First(s=>s.Key=="Email").Value</a></li>
+                                <li><i class="fas fa-map-marker-alt"></i>@settings.First(s => s.Key == "Address").Value</li>
+                                <li><i class="fas fa-phone"></i> <a href="tell:@settings.First(s=>s.Key=="Phone").Value">@settings.First(s => s.Key == "Phone").Value</a></li>
+                                <li><i class="fas fa-envelope"></i><a href="mailto://@settings.First(s=>s.Key=="Email").Value">@settings.First(s => s.Key == "Email").Value</a></li>
                                 <li><i class="far fa-clock"></i> Mon-Sat 9:00pm - 5:00pm Sun:Closed</li>
                             </ul>
                         </div> <!-- footer contact -->
@@ -1495,7 +1331,7 @@
     <!-- <script src="~/assets/js/plugins.min.js"></script> -->
     <!--====== Main Activation js ======-->
     <script src="~/assets/js/main.js"></script>
-
+    <script src="~/assets/js/custom.js"></script>
 
 
 
