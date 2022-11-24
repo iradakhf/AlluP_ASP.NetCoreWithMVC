@@ -55,7 +55,7 @@ namespace Allup.Controllers
             //    p.Brand.Name.ToLower().Contains(text.ToLower())
             //    ).ToListAsync();
             //}
-            return Json(products);
+            return PartialView("_SearchPartialView",products);
         }
     }
 }
