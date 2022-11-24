@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FqNqcQXi6dtZ5+Djwh8yODtqDtIc5bNlcvP2QuvQZ/WO/owpdhPDE3h600AE9oobbv+ThiY3SAKOD3sVf97zIA==",
+  "dgSpecHash": "oqBz/lt+W75o3dVz9chrl7gAYddZq63MxJaqJivB3KyzkRfAB4eX26fJQZiWUKuXj7/508hMMM+rGkP5qrkoHA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\irade\\source\\repos\\Allup\\Allup\\Allup.csproj",
+  "projectFilePath": "C:\\Users\\irade\\source\\repos\\AlluP_ASP.NetCoreWithMVC\\Allup\\Allup.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\irade\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\irade\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

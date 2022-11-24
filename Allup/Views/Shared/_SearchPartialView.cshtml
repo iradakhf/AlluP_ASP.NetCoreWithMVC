@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Product>
+
+@foreach (Product item in Model)
+{
+<li>
+    <img src="~/assets/images/@item.MainImage" alt="Alternate Text" />
+    <a href="#">content</a>
+</li>
+
+}

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Product>
+
+<div class="product-items">
+    <div class="row product-active">
+        @for (int i = 0; i < (int)Math.Ceiling((double)(Model.Count() / 2)); i++)
+        {
+            <div class="col-lg-2">
+                @foreach (Product product in Model.Skip(i * 2).Take(2))
+                {
+
+                    <div class="single-product mt-30">
+                        <div class="product-image">
+                            <a href="single-product.html">
+                                @if (product.HoverImage != null)
+                                {
+                                    <img class="first-image" src="~/assets/images/product/@product.MainImage" alt="product">
+                                    <img class="second-image" src="~/assets/images/product/@product.HoverImage" alt="product">
+
+                                }
+                                else
+                                {
+                                    <img class="first-image" src="~/assets/images/product/@product.MainImage" alt="product">
+
+                                }
+                                @if (product.DiscountedPrice > 0)
+                                {
+                                    <span class="discount-product">-@(((product.Price*100)/product.DiscountedPrice)-100)%</span>
+
+                                }
+
+                            </a>
+                            <ul class="product-meta">
+                                <li><a href="#"><i class="icon ion-bag"></i></a></li>
+                                <li><a href="#"><i class="icon ion-android-favorite-outline"></i></a></li>
+                                <li><a href="#"><i class="icon ion-android-options"></i></a></li>
+                                <li><a id="modalIcon" data-toggle="modal" data-target="#productQuickModal" asp-controller="product" asp-action="GetProductModal" asp-route-id="@product.Id"><i class="icon ion-android-open"></i></a></li>
+
+                            </ul>
+                        </div>
+                        <div class="product-content">
+                            <ul class="product-rating">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                            <h4 class="product-title"><a href="single-product.html">@product.Title</a></h4>
+                            <div class="product-price">
+                                @if (product.DiscountedPrice > 0)
+                                {
+                                    <span class="regular-price">@product.DiscountedPrice</span>
+                                    <span class="price-sale">@product.Price</span>
+
+
+                                }
+                                else
+                                {
+                                    <span class="price-sale">@product.Price</span>
+
+                                }
+                            </div>
+                        </div>
+                    </div> <!-- single product -->
+
+
+                }
+            </div>
+        }
+
+
+    </div> <!-- row -->
+</div> <!-- product items -->

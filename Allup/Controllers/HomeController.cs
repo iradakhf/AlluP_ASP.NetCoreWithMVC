@@ -31,6 +31,7 @@ namespace Allup.Controllers
 
             };
             return View(homeVM);
+
         }
     }
 }
