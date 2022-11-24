@@ -40,8 +40,15 @@ using Allup.ViewModels.Home;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\Views\_ViewImports.cshtml"
+using Allup.ViewModels.ShopVM;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9991cc6580bfaf65238b040afcff85a92084a4df", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1957d9eded2b3170a6fbb2ad974472f13ab5df70", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cd1a5262dc792db5fa654d0d9a7fa48729bb2c5a", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

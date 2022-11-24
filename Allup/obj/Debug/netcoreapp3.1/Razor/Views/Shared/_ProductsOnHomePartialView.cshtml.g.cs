@@ -40,8 +40,15 @@ using Allup.ViewModels.Home;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\Views\_ViewImports.cshtml"
+using Allup.ViewModels.ShopVM;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5c59b3a491bf2b1adc4e31fb87b7ffa0fc897d8f", @"/Views/Shared/_ProductsOnHomePartialView.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1957d9eded2b3170a6fbb2ad974472f13ab5df70", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cd1a5262dc792db5fa654d0d9a7fa48729bb2c5a", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__ProductsOnHomePartialView : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Product>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("first-image"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -106,7 +113,7 @@ using Allup.ViewModels.Home;
 #line hidden
 #nullable disable
             WriteLiteral("                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "5c59b3a491bf2b1adc4e31fb87b7ffa0fc897d8f7744", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "5c59b3a491bf2b1adc4e31fb87b7ffa0fc897d8f7941", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -131,7 +138,7 @@ AddHtmlAttributeValue("", 682, product.MainImage, 682, 18, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "5c59b3a491bf2b1adc4e31fb87b7ffa0fc897d8f9471", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "5c59b3a491bf2b1adc4e31fb87b7ffa0fc897d8f9668", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -167,7 +174,7 @@ AddHtmlAttributeValue("", 809, product.HoverImage, 809, 19, false);
 #line hidden
 #nullable disable
             WriteLiteral("                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "5c59b3a491bf2b1adc4e31fb87b7ffa0fc897d8f11527", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "5c59b3a491bf2b1adc4e31fb87b7ffa0fc897d8f11724", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -232,7 +239,7 @@ AddHtmlAttributeValue("", 1046, product.MainImage, 1046, 18, false);
                                 <li><a href=""#""><i class=""icon ion-android-favorite-outline""></i></a></li>
                                 <li><a href=""#""><i class=""icon ion-android-options""></i></a></li>
                                 <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5c59b3a491bf2b1adc4e31fb87b7ffa0fc897d8f14881", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5c59b3a491bf2b1adc4e31fb87b7ffa0fc897d8f15078", async() => {
                 WriteLiteral("<i class=\"icon ion-android-open\"></i>");
             }
             );
