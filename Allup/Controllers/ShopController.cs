@@ -18,26 +18,18 @@ namespace Allup.Controllers
             _context = context;
         }
        public async Task<IActionResult> Search(int? id, string text)
-        {
-            IEnumerable<Product> products =
+        { 
+            IEnumerable<ProductListVM> products =
                 await _context.Products
-                   .Where(
-                    p => p.Id !=null ? p.CategoryId == id : true ||
+                   .Where(p=>   
                 p.Title.ToLower().Contains(text.ToLower()) ||
                 p.Brand.Name.ToLower().Contains(text.ToLower())
-                ).ToListAsync();
-
-            List<ProductListVM> productListVMs = new List<ProductListVM>();
-            foreach (Product item in products)
-            {
-                ProductListVM productListVM = new ProductListVM
-                {
-                    Id = item.Id,
-                    Image = item.MainImage,
-                    Title = item.Title
-                };
-            productListVMs.Add(productListVM);
-            }
+                ).Take(2).Select(x=> new ProductListVM {
+                    Id = x.Id,
+                    Title = x.Title,
+                    Image = x.MainImage
+                }).ToListAsync();
+            
             //if (id != null)
             //{
             //   products=  await _context.Products
@@ -55,7 +47,7 @@ namespace Allup.Controllers
             //    p.Brand.Name.ToLower().Contains(text.ToLower())
             //    ).ToListAsync();
             //}
-            return PartialView("_SearchPartialView",products);
+            return PartialView("_SearchPartialView", products);
         }
     }
 }

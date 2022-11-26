@@ -158,10 +158,6 @@
                                         <button type="button" class="searchBtn"><i class="icon ion-android-search"></i></button>
                                     </form>
                                     <ul id="searchResult" style="background-color:white; text-decoration:none; width:100%; height:auto; position:absolute; z-index:2">
-                                        <li>
-                                            <img width="100" src="~/assets/images/category-1.jpg" alt="Alternate Text" />
-                                            <a href="#">content</a>
-                                        </li>
 
                                     </ul>
                                 </div>
@@ -556,7 +552,7 @@
                 <div class="header-search">
                     <form action="#">
                         <div class="search-category">
-                            <select class="searchCategory">
+                            <select>
                                 <option value="">All categories</option>
                                 @foreach (Category mainCategory in categories)
                                 {
@@ -574,12 +570,10 @@
 
                             </select>
                         </div>
-                        <input class="searchInput" type="text" placeholder="Enter your search key ... ">
-                        <button type="button" class="searchBtn"><i class="icon ion-android-search"></i></button>
+                        <input type="text" placeholder="Enter your search key ... ">
+                        <button type="button"><i class="icon ion-android-search"></i></button>
                     </form>
-                    <ul id="listForSearch" style="width:100%; height:auto; background-color:white; position:absolute; z-index:3; ">
-                       
-                    </ul>
+                  
                 </div>
             </div> <!-- container -->
 

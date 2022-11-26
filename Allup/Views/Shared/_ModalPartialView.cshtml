@@ -7,38 +7,26 @@
         <div class="col-md-6">
             <div class="product-quick-view-image mt-30">
                 <div class="quick-view-image">
-                    
+                    @foreach(ProductImage item in Model.ProductImages)
+                    {
                     <div class="single-view-image">
-                        <img src="~/assets/images/product-quick/@Model.MainImage" alt="product">
+                        <img src="~/assets/images/product-quick/@item.Name" alt="product">
                     </div>
+
+                    }
                  
                 </div>
                 <ul class="quick-view-thumb">
+                    @foreach (ProductImage productImage in Model.ProductImages)
+                    {
                     <li>
                         <div class="single-thumb">
-                            <img src="~/assets/images/product-quick/product-1.jpg" alt="">
+                            <img src="~/assets/images/product-quick/@productImage.Name" alt="">
                         </div>
                     </li>
-                    <li>
-                        <div class="single-thumb">
-                            <img src="~/assets/images/product-quick/product-2.jpg" alt="">
-                        </div>
-                    </li>
-                    <li>
-                        <div class="single-thumb">
-                            <img src="~/assets/images/product-quick/product-3.jpg" alt="">
-                        </div>
-                    </li>
-                    <li>
-                        <div class="single-thumb">
-                            <img src="~/assets/images/product-quick/product-4.jpg" alt="">
-                        </div>
-                    </li>
-                    <li>
-                        <div class="single-thumb">
-                            <img src="~/assets/images/product-quick/product-5.jpg" alt="">
-                        </div>
-                    </li> 
+
+                    }
+                   
                 </ul>
             </div> <!-- Modal Quick View Image -->
         </div>
