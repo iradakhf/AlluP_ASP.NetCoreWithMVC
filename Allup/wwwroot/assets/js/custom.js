@@ -21,8 +21,8 @@
         fetch(url).then(response => 
              response.text()
         ).then(data => {
-            $(".modal-body").html(data)
-            $(".modal-body").modal("show")
+            $(".modal .modal-dialog .modal-body").html(data)
+            $(".modal").modal("show")
 
         })
     })
