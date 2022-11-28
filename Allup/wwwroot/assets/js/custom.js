@@ -1,4 +1,23 @@
 ﻿$(document).ready(() => {
+
+    $(".addtobasket").click(function (e) {
+        e.preventDefault();
+        let url = $(this).attr("href");
+        fetch(url)
+            .then(response => {
+                if (response.ok) {
+                    alert("add");
+
+                }
+                else if (response.status == 404) {
+                    alert(response.text());
+                }
+                else if (response.status == 403) {
+                    alert(response.text());
+                }
+            })
+    })
+
     $(document).on("click", ".searchBtn", function (e) {
         e.preventDefault()
         let searchInput = $(".searchInput").val();

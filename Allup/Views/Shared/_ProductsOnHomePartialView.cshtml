@@ -30,7 +30,7 @@
 
                             </a>
                             <ul class="product-meta">
-                                <li><a href="#"><i class="icon ion-bag"></i></a></li>
+                                <li><a class="addtobasket" asp-controller="basket" asp-action="addtobasket" asp-route-id="@product.Id"><i class="icon ion-bag"></i></a></li>
                                 <li><a href="#"><i class="icon ion-android-favorite-outline"></i></a></li>
                                 <li><a href="#"><i class="icon ion-android-options"></i></a></li>
                                 <li><a id="modalIcon" data-toggle="modal" data-target="#productQuickModal" asp-controller="product" asp-action="GetProductModal" asp-route-id="@product.Id"><i class="icon ion-android-open"></i></a></li>
