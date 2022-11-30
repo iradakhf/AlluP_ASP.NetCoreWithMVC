@@ -89,7 +89,7 @@ namespace Allup.Controllers
 
             }
             Product product = await _context.Products.FirstOrDefaultAsync(p => p.IsDeleted == false && p.Id == id);
-           if(product !=null)
+           if(product ==null)
             {
                 return NotFound();
             }
@@ -113,11 +113,11 @@ namespace Allup.Controllers
 
             foreach (BasketVM basketVM in products)
             {
-                product = await _context.Products.FirstOrDefaultAsync(p => p.Id == basketVM.Id);
-                basketVM.Image = product.MainImage;
-                basketVM.Price = product.DiscountedPrice > 0 ? product.DiscountedPrice : product.Price;
-                basketVM.ExTax = product.ExTax;
-                basketVM.Title = product.Title;
+                Product product1 = await _context.Products.FirstOrDefaultAsync(p => p.Id == basketVM.Id);
+                basketVM.Image = product1.MainImage;
+                basketVM.Price = product1.DiscountedPrice > 0 ? product.DiscountedPrice : product.Price;
+                basketVM.ExTax = product1.ExTax;
+                basketVM.Title = product1.Title;
             }
 
             return PartialView("_BasketCartPartial", products);
