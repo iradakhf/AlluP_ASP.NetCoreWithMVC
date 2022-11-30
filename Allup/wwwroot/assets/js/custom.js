@@ -5,18 +5,24 @@
         let url = $(this).attr("href");
         fetch(url)
             .then(response => {
-                if (response.ok) {
-                    alert("add");
+            return response.text()
+            }).then(data => {
+                $("#headerCart").html(data)
 
-                }
-                else if (response.status == 404) {
-                    alert(response.text());
-                }
-                else if (response.status == 403) {
-                    alert(response.text());
-                }
-            })
+            }
+            )
     })
+    $("#closeIconforCartProduct").click(function (e) {
+        e.preventDefault();
+        let url = $(this).attr("href");
+        fetch(url)
+            .then(response => {
+                return response.text()
+            }).then(data => {
+                $("#headerCart").html(data);
+            })
+
+     })
 
     $(document).on("click", ".searchBtn", function (e) {
         e.preventDefault()
