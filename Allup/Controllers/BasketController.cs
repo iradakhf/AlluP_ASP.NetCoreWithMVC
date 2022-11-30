@@ -108,8 +108,8 @@ namespace Allup.Controllers
                     return NotFound();
                 }
             }
-            basket = JsonConvert.SerializeObject(products);
-            HttpContext.Response.Cookies.Append("basket",basket);
+           string basket1 = JsonConvert.SerializeObject(products);
+            HttpContext.Response.Cookies.Append("basket",basket1);
 
             foreach (BasketVM basketVM in products)
             {
