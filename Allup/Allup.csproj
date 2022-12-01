@@ -73,4 +73,19 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\manage\img\undraw_posting_photo.svg" />
+    <None Include="wwwroot\manage\img\undraw_profile.svg" />
+    <None Include="wwwroot\manage\img\undraw_profile_1.svg" />
+    <None Include="wwwroot\manage\img\undraw_profile_2.svg" />
+    <None Include="wwwroot\manage\img\undraw_profile_3.svg" />
+    <None Include="wwwroot\manage\img\undraw_rocket.svg" />
+    <None Include="wwwroot\manage\js\demo\chart-area-demo.js" />
+    <None Include="wwwroot\manage\js\demo\chart-bar-demo.js" />
+    <None Include="wwwroot\manage\js\demo\chart-pie-demo.js" />
+    <None Include="wwwroot\manage\js\demo\datatables-demo.js" />
+    <None Include="wwwroot\manage\js\sb-admin-2.js" />
+    <None Include="wwwroot\manage\js\sb-admin-2.min.js" />
+  </ItemGroup>
+
 </Project>
