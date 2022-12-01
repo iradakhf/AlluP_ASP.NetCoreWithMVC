@@ -1,6 +1,5 @@
 ﻿using Allup.DAL;
 using Allup.Models;
-using Allup.ViewModels.Home;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

@@ -68,15 +68,8 @@ using Allup.ViewComponents;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 10 "C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\Views\_ViewImports.cshtml"
-using Allup.ViewModels.Home;
-
-#line default
-#line hidden
-#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8fe67efee26dcb8aaa1ae40debcba15ee73f3302", @"/Views/Shared/Components/Product/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"39a773fbd39fb7264ccf4df81dfe6b0a1f7b36e7", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7feae6ceb5ecf80e38d7f66fa03fd3eab7b008d9", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_Product_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ProductVM>
     {
         #pragma warning disable 1998

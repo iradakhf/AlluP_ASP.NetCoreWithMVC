@@ -53,8 +53,12 @@ namespace Allup
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                      name: "areas",
+            pattern: "{area:exists}/{controller=DashBoard}/{action=Index}/{id?}"
+                    );
+                endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=home}/{action=index}/{id?}"
+                    pattern: "{controller=Home}/{action=index}/{id?}"
                     );
             });
         }
