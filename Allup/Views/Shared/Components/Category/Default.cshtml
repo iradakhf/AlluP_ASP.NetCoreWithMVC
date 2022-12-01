@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Category>
+<section class="category-area category-bg pt-100 pb-100">
+    <div class="container-fluid custom-container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="section-title text-center pb-30">
+                    <h2 class="title">Featured Categories</h2>
+                </div>
+            </div>
+        </div> <!-- row -->
+        <div class="row category-active">
+
+            @for (int i = 0; i < (int)Math.Ceiling(((decimal)Model.Count() / 2)); i++)
+            {
+                <div class="col-lg-2">
+                    @foreach (var item in Model.Skip(i * 2).Take(2))
+                    {
+                        <div class="single-category text-center">
+                            <a target="_blank" href="shop-left-sidebar.html">
+                                <img src="~/assets/images/@item.Image" alt="category">
+                                <p>@item.Name</p>
+                            </a>
+                        </div> <!-- single category -->
+                    }
+                </div>
+
+            }
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>

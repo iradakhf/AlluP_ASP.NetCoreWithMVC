@@ -1,0 +1,34 @@
+﻿@model ProductVM
+<section class="product-area pt-100 pb-100">
+    <div class="container-fluid custom-container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="product-menu pb-30">
+                    <ul class="nav justify-content-center" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="active" id="new-tab" data-toggle="tab" href="#new" role="tab" aria-controls="new" aria-selected="true">New Arrival</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a id="bestseller-tab" data-toggle="tab" href="#bestseller" role="tab" aria-controls="bestseller" aria-selected="false">Bestseller</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a id="featured-tab" data-toggle="tab" href="#featured" role="tab" aria-controls="featured" aria-selected="false">Featured</a>
+                        </li>
+                    </ul>
+                </div> <!-- product menu -->
+            </div>
+        </div> <!-- row -->
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="new" role="tabpanel" aria-labelledby="new-tab">
+                @Html.Partial("_ProductsOnHomePartialView", Model.NewArrivals)
+
+            </div>
+            <div class="tab-pane fade" id="bestseller" role="tabpanel" aria-labelledby="bestseller-tab">
+                @Html.Partial("_ProductsOnHomePartialView", Model.BestSellers)
+            </div>
+            <div class="tab-pane fade" id="featured" role="tabpanel" aria-labelledby="featured-tab">
+                @Html.Partial("_ProductsOnHomePartialView", Model.Featured)
+            </div>
+        </div> <!-- tab content -->
+    </div> <!-- container -->
+</section>

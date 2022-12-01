@@ -296,3 +296,8 @@ C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3
 C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductsOnHomePartialView.cshtml.g.cs
 C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_SearchPartialView.cshtml.g.cs
 C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_BasketCartPartial.cshtml.g.cs
+C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Header\Default.cshtml.g.cs
+C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs
+C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Category\Default.cshtml.g.cs
+C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Product\Default.cshtml.g.cs
+C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Slider\Default.cshtml.g.cs
