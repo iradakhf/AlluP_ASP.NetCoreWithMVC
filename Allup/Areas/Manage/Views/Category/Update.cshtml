@@ -1,6 +1,6 @@
 ﻿@model Category
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Update";
     IEnumerable<Category> categories = ViewBag.Categories;
     SelectList selectListItems = new SelectList(categories, nameof(Category.Id), nameof(Category.Name));
 }
@@ -31,10 +31,10 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
 </div>
-@section script{ 
-   @await Html.PartialAsync("_ValidationPartial");
+@section script{
+    @await Html.PartialAsync("_ValidationPartial");
 }

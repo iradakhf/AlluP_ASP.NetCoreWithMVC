@@ -40,29 +40,32 @@
             <tbody>
                 @foreach (Category category in Model)
                 {
-                    <tr>
-                        <td>
-                            @counter
-                        </td>
-                        <td>
-                            <img width="100" src="~/assets/images/@category.Image" />
-                        </td>
-                        <td>
-                            @category.Name
-                        </td>
-                        <td>
-                            @category.Products.Count()
-                        </td>
-                        <td>
-                            @category.CreatedAt?.ToString("dd/mm/yyyy")
-                        </td>
-                        <td>
-                            <a class="btn btn-warning">Update</a>
-                            <a class="btn btn-danger">Delete</a>
-                            <a class="btn btn-primary">Detail</a>
+                <tr>
+                    <td>
+                        @counter
+                    </td>
+                    <td>
+                        <img width="100" src="~/assets/images/@category.Image" />
+                    </td>
+                    <td>
+                        @category.Name
+                    </td>
+                    <td>
+                        @category.Products.Count()
+                    </td>
+                    <td>
+                        @category.CreatedAt?.ToString("dd/mm/yyyy")
+                    </td>
+                    <td>
+                        @category.UpdatedAt?.ToString("dd/mm/yyyy")
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" asp-area="manage" asp-controller="category" asp-action="update" asp-route-id="@category.Id">Update</a>
+                        <a class="btn btn-danger">Delete</a>
+                        <a class="btn btn-primary">Detail</a>
 
-                        </td>
-                    </tr>
+                    </td>
+                </tr>
                     counter++;
                 }
             </tbody>
