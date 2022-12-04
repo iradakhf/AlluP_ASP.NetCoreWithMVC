@@ -305,3 +305,8 @@ C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3
 C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\_ViewStart.cshtml.g.cs
 C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\_ViewImports.cshtml.g.cs
+C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Brand\Index.cshtml.g.cs
+C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Brand\Create.cshtml.g.cs
+C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Category\Index.cshtml.g.cs
+C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Category\Create.cshtml.g.cs
+C:\Users\irade\source\repos\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_ValidationPartial.cshtml.g.cs

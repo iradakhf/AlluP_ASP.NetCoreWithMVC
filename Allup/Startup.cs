@@ -56,6 +56,7 @@ namespace Allup
                       name: "areas",
             pattern: "{area:exists}/{controller=DashBoard}/{action=Index}/{id?}"
                     );
+              
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=index}/{id?}"

@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Allup.Areas.Manage.Controllers
 {
+    [Area("manage")]
     public class DashBoardController : Controller
     {
-        [Area("manage")]
+        
         public IActionResult Index()
         {
             return View();
