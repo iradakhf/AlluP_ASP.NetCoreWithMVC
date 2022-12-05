@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+
     let isMain = $("#IsMain").is(":checked");
     if (isMain) {
         $("#parentList").addClass("d-none")

@@ -186,5 +186,41 @@ namespace Allup.Areas.Manage.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return BadRequest("this id could not be found");
+            }
+            Category category = await _context.Categories.FirstOrDefaultAsync(c => c.IsDeleted == false && c.Id == id);
+            if (category==null)
+            {
+                return NotFound("can not find category with this id");
+            }
+
+            category.IsDeleted = true;
+            category.DeletedAt = DateTime.UtcNow.AddHours(4);
+            category.DeletedBy = "System";
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+
+        }
+
+        public async Task<IActionResult> ShowDetail(int? id)
+        {
+            if (id == null)
+            {
+                return BadRequest("id can not be null");
+            }
+            Category category = await _context.Categories.FirstOrDefaultAsync(C => C.IsDeleted == false && C.Id == id);
+            if (category == null)
+            {
+                return NotFound("can not find category with this id");
+            }
+            ViewBag.Categories = await _context.Categories
+               .Where(c => c.IsDeleted == false && c.IsMain==false && c.ParentId == id)
+               .ToListAsync();
+            return View(category);
+        }
     }
 }

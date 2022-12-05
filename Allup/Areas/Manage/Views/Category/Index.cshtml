@@ -33,7 +33,7 @@
                         Created at
                     </th>
                     <th>
-                        Setting
+                        Updated at
                     </th>
                 </tr>
             </thead>
@@ -61,8 +61,8 @@
                     </td>
                     <td>
                         <a class="btn btn-warning" asp-area="manage" asp-controller="category" asp-action="update" asp-route-id="@category.Id">Update</a>
-                        <a class="btn btn-danger">Delete</a>
-                        <a class="btn btn-primary">Detail</a>
+                        <a class="btn btn-danger" asp-area="manage" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>
+                        <a class="btn btn-primary" asp-area="manage" asp-controller="category" asp-action="ShowDetail"  asp-route-id="@category.Id">Detail</a>
 
                     </td>
                 </tr>
