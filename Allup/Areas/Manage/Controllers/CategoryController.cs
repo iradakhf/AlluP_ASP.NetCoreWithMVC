@@ -2,6 +2,7 @@
 using Allup.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,13 @@ namespace Allup.Areas.Manage.Controllers
             {
                 return View();
             }
+
+            if (await _context.Categories.AnyAsync(c=>c.IsDeleted==false && c.Name.ToLower().Trim()==category.Name.ToLower().Trim()))
+            {
+                ModelState.AddModelError("Name",$"This {category.Name} exists");
+                return View(category);
+            }
+
             if (category.IsMain)
             {
                 category.ParentId = null;
@@ -90,6 +98,7 @@ namespace Allup.Areas.Manage.Controllers
                 category.Image = null;
             }
 
+            category.Name = category.Name.Trim();
             category.IsDeleted = false;
             category.CreatedAt = DateTime.UtcNow.AddHours(4);
             category.CreatedBy = "System";
@@ -135,6 +144,11 @@ namespace Allup.Areas.Manage.Controllers
             {
                 return BadRequest("id can not be null");
 
+            }
+            if (await _context.Categories.AnyAsync(c => c.IsDeleted == false && c.Id != id && c.Name.ToLower().Trim() == category.Name.ToLower().Trim()))
+            {
+                ModelState.AddModelError("Name", $"This {category.Name} exists");
+                return View(category);
             }
             if (category.IsMain)
             {
