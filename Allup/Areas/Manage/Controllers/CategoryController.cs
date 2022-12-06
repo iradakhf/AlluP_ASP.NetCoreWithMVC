@@ -1,5 +1,6 @@
 ﻿using Allup.DAL;
 using Allup.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -16,7 +17,7 @@ namespace Allup.Areas.Manage.Controllers
     public class CategoryController : Controller
     {
         private readonly AppDbContext _context;
-        public CategoryController(AppDbContext context)
+        public CategoryController(AppDbContext context, IWebHostEnvironment environment)
         {
             _context = context;
         }
@@ -145,7 +146,7 @@ namespace Allup.Areas.Manage.Controllers
                 return BadRequest("id can not be null");
 
             }
-            if (await _context.Categories.AnyAsync(c => c.IsDeleted == false && c.Id != id && c.Name.ToLower().Trim() == category.Name.ToLower().Trim()))
+            if (await _context.Categories.AnyAsync(c => c.IsDeleted == false && c.Name.ToLower().Trim() == category.Name.ToLower().Trim() && c.Id != id))
             {
                 ModelState.AddModelError("Name", $"This {category.Name} exists");
                 return View(category);
@@ -153,31 +154,39 @@ namespace Allup.Areas.Manage.Controllers
             if (category.IsMain)
             {
                 category.ParentId = null;
-                if (category.File == null)
+                if (existedCategory.Image ==null && category.File == null)
                 {
                     ModelState.AddModelError("File", "is required");
                     return View();
                 }
-                if (category.File.ContentType != "image/png")
+                if (category.File !=null)
                 {
-                    ModelState.AddModelError("File", "file type should be jpeg or jpg");
-                    return View();
-                }
-                if (category.File.Length > 20000)
-                {
-                    ModelState.AddModelError("File", "file length should be less than 20k");
-                    return View();
-                }
-                string originalFileName = category.File.FileName.Substring(category.File.FileName.LastIndexOf("."), 4);
-                string fileName = Guid.NewGuid().ToString() + "-" + DateTime.UtcNow.AddHours(4).ToString("yyyymmddhhmmss") + originalFileName;
-                string path = @"C:\Users\irade\source\repos\new\AlluP_ASP.NetCoreWithMVC\Allup\wwwroot\assets\images\" + fileName;
-                using (FileStream fileStream = new FileStream(path, FileMode.Create))
-                {
-                    await category.File.CopyToAsync(fileStream);
-                }
-                existedCategory.ParentId = null;
-                existedCategory.Image = fileName;
+                    if (category.File.ContentType != "image/png")
+                    {
+                        ModelState.AddModelError("File", "file type should be jpeg or jpg");
+                        return View();
+                    }
+                    if (category.File.Length > 20000)
+                    {
+                        ModelState.AddModelError("File", "file length should be less than 20k");
+                        return View();
+                    }
+                    string path = @"C:\Users\irade\source\repos\new\AlluP_ASP.NetCoreWithMVC\Allup\wwwroot\assets\images\";
+                    if (System.IO.File.Exists(path + existedCategory.Image))
+                    {
+                        System.IO.File.Delete(path + existedCategory.Image);
+                    }
+                    string originalFileName = category.File.FileName.Substring(category.File.FileName.LastIndexOf("."), 4);
+                    string fileName = Guid.NewGuid().ToString() + "-" + DateTime.UtcNow.AddHours(4).ToString("yyyymmddhhmmss") + originalFileName;
+                    string fullpath = path + fileName;
+                    using (FileStream fileStream = new FileStream(fullpath, FileMode.Create))
+                    {
+                        await category.File.CopyToAsync(fileStream);
+                    }
+                    existedCategory.ParentId = null;
+                    existedCategory.Image = fileName;
 
+                }
             }
             else
             {
@@ -192,6 +201,7 @@ namespace Allup.Areas.Manage.Controllers
                     return View(category);
                 }
                 existedCategory.Image = null;
+                existedCategory.ParentId = category.ParentId;
             }
             existedCategory.IsMain = category.IsMain;
             existedCategory.Name = category.Name;
@@ -226,14 +236,15 @@ namespace Allup.Areas.Manage.Controllers
             {
                 return BadRequest("id can not be null");
             }
-            Category category = await _context.Categories.FirstOrDefaultAsync(C => C.IsDeleted == false && C.Id == id);
+            Category category = await _context.Categories
+                .Include(c=>c.Products)
+                .Include(c=>c.Children)
+                .FirstOrDefaultAsync(C => C.IsDeleted == false && C.IsMain && C.Id == id);
             if (category == null)
             {
                 return NotFound("can not find category with this id");
             }
-            ViewBag.Categories = await _context.Categories
-               .Where(c => c.IsDeleted == false && c.IsMain==false && c.ParentId == id)
-               .ToListAsync();
+          
             return View(category);
         }
     }
