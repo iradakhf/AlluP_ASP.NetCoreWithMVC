@@ -18,11 +18,15 @@
 
     <!-- Custom styles for this template-->
     <link href="~/manage/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 </head>
 
 <body id="page-top">
-
+    @if (TempData["Error"]!=null)
+    {
+        <input type="hidden" id="errorInput" value="@TempData["Error"]" />
+    }
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -68,6 +72,15 @@
                     <span>Category</span>
                 </a>
             </li>
+            <div class="sidebar-heading">
+                Product
+            </div>
+            <li class="nav-item active">
+                <a class="nav-link" asp-area="manage" asp-controller="Product" asp-action="index">
+                    <span>Product</span>
+                </a>
+            </li>
+
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -345,7 +358,7 @@
             <!-- Bootstrap core JavaScript-->
             <script src="~/manage/vendor/jquery/jquery.min.js"></script>
             <script src="~/manage/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-         @RenderSection("script",false);
+            @RenderSection("script", false);
             <!-- Core plugin JavaScript-->
             <script src="~/manage/vendor/jquery-easing/jquery.easing.min.js"></script>
 
@@ -359,6 +372,31 @@
             <script src="~/manage/js/demo/chart-area-demo.js"></script>
             <script src="~/manage/js/demo/chart-pie-demo.js"></script>
             <script src="~/manage/js/custom.js" asp-append-version="true"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+            <script>
+               
+                let inputError = $('#errorInput').val();
+                if (inputError.length>0) {
+                    toastr.options = {
+                        "closeButton": false,
+                        "debug": false,
+                        "newestOnTop": false,
+                        "progressBar": false,
+                        "positionClass": "toast-top-right",
+                        "preventDuplicates": false,
+                        "onclick": null,
+                        "showDuration": "300",
+                        "hideDuration": "1000",
+                        "timeOut": "5000",
+                        "extendedTimeOut": "1000",
+                        "showEasing": "swing",
+                        "hideEasing": "linear",
+                        "showMethod": "fadeIn",
+                        "hideMethod": "fadeOut"
+                    }
+                    toastr["success"]("My name is Inigo Montoya. You killed my father. Prepare to die!")
+                }
+            </script>
 
 
 </body>

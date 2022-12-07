@@ -17,9 +17,12 @@ namespace Allup.Areas.Manage.Controllers
     public class CategoryController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IWebHostEnvironment _environment;
+
         public CategoryController(AppDbContext context, IWebHostEnvironment environment)
         {
             _context = context;
+            _environment = environment;
         }
         public async Task<IActionResult> Index()
         {
@@ -171,14 +174,14 @@ namespace Allup.Areas.Manage.Controllers
                         ModelState.AddModelError("File", "file length should be less than 20k");
                         return View();
                     }
-                    string path = @"C:\Users\irade\source\repos\new\AlluP_ASP.NetCoreWithMVC\Allup\wwwroot\assets\images\";
-                    if (System.IO.File.Exists(path + existedCategory.Image))
+                    string path = Path.Combine(_environment.WebRootPath,"assets", "images");
+                    if (System.IO.File.Exists(Path.Combine(path, existedCategory.Image)))
                     {
-                        System.IO.File.Delete(path + existedCategory.Image);
+                        System.IO.File.Delete(Path.Combine(path, existedCategory.Image));
                     }
                     string originalFileName = category.File.FileName.Substring(category.File.FileName.LastIndexOf("."), 4);
                     string fileName = Guid.NewGuid().ToString() + "-" + DateTime.UtcNow.AddHours(4).ToString("yyyymmddhhmmss") + originalFileName;
-                    string fullpath = path + fileName;
+                    string fullpath = Path.Combine(path, fileName);
                     using (FileStream fileStream = new FileStream(fullpath, FileMode.Create))
                     {
                         await category.File.CopyToAsync(fileStream);
@@ -216,12 +219,19 @@ namespace Allup.Areas.Manage.Controllers
             {
                 return BadRequest("this id could not be found");
             }
-            Category category = await _context.Categories.FirstOrDefaultAsync(c => c.IsDeleted == false && c.Id == id);
+            Category category = await _context.Categories
+                .Include(c=>c.Products)
+                .Include(c => c.Children)
+                .FirstOrDefaultAsync(c => c.IsDeleted == false && c.Id == id);
             if (category==null)
             {
                 return NotFound("can not find category with this id");
             }
-
+            if((category.Products!=null && category.Products.Count()>0) || (category.Children!=null && category.Children.Count()>0)) 
+            {
+                TempData["Error"] = $"{id} li category siline bilmez";
+                return RedirectToAction("Index");
+            }
             category.IsDeleted = true;
             category.DeletedAt = DateTime.UtcNow.AddHours(4);
             category.DeletedBy = "System";
