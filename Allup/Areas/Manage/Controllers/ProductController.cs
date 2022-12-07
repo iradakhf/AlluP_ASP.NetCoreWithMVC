@@ -31,7 +31,25 @@ namespace Allup.Areas.Manage.Controllers
         }
         public async Task<IActionResult> Create()
         {
+            ViewBag.Brands = await _appDbContext.Brands.Where(b => b.IsDeleted == false).ToListAsync();
+            ViewBag.Categories = await _appDbContext.Categories.Where(b => b.IsDeleted == false).ToListAsync();
+            ViewBag.Tags = await _appDbContext.Tags.Where(b => b.IsDeleted == false).ToListAsync();
+
+
             return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Product product)
+        {
+            ViewBag.Brands = await _appDbContext.Brands.Where(b => b.IsDeleted == false).ToListAsync();
+            ViewBag.Categories = await _appDbContext.Categories.Where(b => b.IsDeleted == false).ToListAsync();
+            ViewBag.Tags = await _appDbContext.Tags.Where(b => b.IsDeleted == false).ToListAsync();
+            if (!ModelState.IsValid)
+            {
+                return View(product);
+            }
+            return RedirectToAction("Index");
         }
     }
 }

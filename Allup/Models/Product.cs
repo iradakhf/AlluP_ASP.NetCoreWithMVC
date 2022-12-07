@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using Microsoft.AspNetCore.Http;
 
 namespace Allup.Models
 {
@@ -38,6 +38,17 @@ namespace Allup.Models
         public Category Category { get; set; }
         public IEnumerable<ProductImage> ProductImages { get; set; }
         public IEnumerable<ProductTag> ProductTags { get; set; }
+
+
+        [NotMapped]
+        public IFormFile MainImageFile { get; set; }
+        [NotMapped]
+        public IFormFile HoverImageFile { get; set; }
+        [NotMapped]
+        public IEnumerable<IFormFile> ProductImageFiles { get; set; }
+        [NotMapped]
+        [MaxLength(3)]
+        public IEnumerable<int> TagIds { get; set; }
 
     }
 }

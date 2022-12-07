@@ -478,3 +478,4 @@ C:\Users\irade\source\repos\new\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcore
 C:\Users\irade\source\repos\new\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Category\Update.cshtml.g.cs
 C:\Users\irade\source\repos\new\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Category\ShowDetail.cshtml.g.cs
 C:\Users\irade\source\repos\new\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Index.cshtml.g.cs
+C:\Users\irade\source\repos\new\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Create.cshtml.g.cs
