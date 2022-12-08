@@ -479,3 +479,10 @@ C:\Users\irade\source\repos\new\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcore
 C:\Users\irade\source\repos\new\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Category\ShowDetail.cshtml.g.cs
 C:\Users\irade\source\repos\new\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Index.cshtml.g.cs
 C:\Users\irade\source\repos\new\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Product\Create.cshtml.g.cs
+C:\Users\irade\source\repos\new\AlluP_ASP.NetCoreWithMVC\Allup\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\irade\source\repos\new\AlluP_ASP.NetCoreWithMVC\Allup\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\irade\source\repos\new\AlluP_ASP.NetCoreWithMVC\Allup\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\irade\source\repos\new\AlluP_ASP.NetCoreWithMVC\Allup\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\irade\source\repos\new\AlluP_ASP.NetCoreWithMVC\Allup\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\irade\source\repos\new\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Account\Register.cshtml.g.cs
+C:\Users\irade\source\repos\new\AlluP_ASP.NetCoreWithMVC\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Account\Login.cshtml.g.cs

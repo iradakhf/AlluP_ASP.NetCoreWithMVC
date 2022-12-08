@@ -61,9 +61,12 @@
     <Compile Remove="Migrations\20221122080138_CreatedProductImagesTableAndADDEDRelationToProduct.Designer.cs" />
     <Compile Remove="Migrations\20221122080226_CreatedProductImagesTableAndADDEDRelationToProduct.cs" />
     <Compile Remove="Migrations\20221122080226_CreatedProductImagesTableAndADDEDRelationToProduct.Designer.cs" />
+    <Compile Remove="Migrations\20221208044336_AddedUserTables.cs" />
+    <Compile Remove="Migrations\20221208044336_AddedUserTables.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.31" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.31" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.31" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.31">
